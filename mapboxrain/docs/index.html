@@ -162,16 +162,35 @@
         });
         map.addControl(new mapboxgl.NavigationControl());
         
+        
+        // Añadido
+        
         map.addControl(new mapboxgl.GeolocateControl({
-positionOptions: {
-enableHighAccuracy: true
-},
-trackUserLocation: true,
-showUserHeading: true
-}), 'top-left');
+        positionOptions: {
+        enableHighAccuracy: true
+                            },
+        trackUserLocation: true,
+        showUserHeading: true
+        }), 'top-left');
         
         
+      // Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl(),'top-left');
+
+      const directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+        unit: 'metric',
+        language: 'es',
+	      steps: true,
+        profile: 'mapbox/walking',
+        alternatives: 'true',
+        geometries: 'geojson',   
+      });
+
+      map.scrollZoom.enable();
+      map.addControl(directions, 'top-right');  
         
+       // Añadido
         
         map.addControl(new mapboxgl.FullscreenControl({container: root}));
         map.addControl(new MapboxGLButtonControl([{
