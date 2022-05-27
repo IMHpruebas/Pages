@@ -166,12 +166,14 @@
         // Añadido
         
         map.addControl(new mapboxgl.GeolocateControl({
+        className: 'mapboxgl-ctrl-map',
+        title: 'Map Style',
         positionOptions: {
         enableHighAccuracy: true
                             },
         trackUserLocation: true,
         showUserHeading: true
-        }), 'top-left');
+        }));
         
         
   
