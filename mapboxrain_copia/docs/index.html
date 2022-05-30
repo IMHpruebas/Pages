@@ -42,7 +42,13 @@
         <div id="left" class="sidebar flex-center left collapsed">
 
                 <div class="sidebar-content rounded-rect flex-center">           
-                    Left Sidebar <div class="sidebar-toggle rounded-rect left" onclick="toggleSidebar('left')" >&rarr;</div>
+                    Left Sidebar <div class="sidebar-toggle rounded-rect left" onclick="toggleSidebar('left')" >&rarr;
+                    <div id="title">
+            <div id="time"></div>
+            <div id="last-updated"></div>
+        </div>
+                    
+                    </div>
                 </div>
 
             </div>
@@ -53,10 +59,7 @@
                     Right Sidebar <div class="sidebar-toggle rounded-rect right" onclick="toggleSidebar('right')" >&larr;</div>
                 </div>
         </div>
-        <div id="title">
-            <div id="time"></div>
-            <div id="last-updated"></div>
-        </div>
+        
         <div id="map-styles-bg">
             <div id="map-styles">
                 <div id="terrain" class="active"><span></span>3D Terrain</div>
