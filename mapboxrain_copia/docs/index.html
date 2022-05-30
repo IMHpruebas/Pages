@@ -238,19 +238,12 @@ map.addControl(directions, 'top-right');
 map.scrollZoom.enable();
 
         
-  // get the sidebar and add the instructions
-const instructions = document.getElementById('instructions');
-const steps = data.legs[0].steps;
-
-let tripInstructions = '';
-for (const step of steps) {
-  tripInstructions += `<li>${step.maneuver.instruction}</li>`;
-}
-instructions.innerHTML = `<p><strong>Trip duration: ${Math.floor(
-  data.duration / 60
-)} min 🚴 </strong></p><ol>${tripInstructions}</ol>`;
-      
-        
+ map.addControl(
+new MapboxDirections({
+accessToken: mapboxgl.accessToken
+}),
+'top-right'
+);
  
         
         
