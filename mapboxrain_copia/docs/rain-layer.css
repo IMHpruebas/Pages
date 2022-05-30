@@ -209,10 +209,10 @@ html, body {
              
             .sidebar-content {
                 position: absolute;
-                width: 65%;
-                height: 65%;
+                width: 95%;
+                height: 95%;
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
+                font-size: 10px;
                 color: gray;
             }
              
