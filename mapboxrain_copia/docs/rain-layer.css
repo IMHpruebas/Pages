@@ -209,8 +209,8 @@ html, body {
              
             .sidebar-content {
                 position: absolute;
-                width: 95%;
-                height: 95%;
+                width: 65%;
+                height: 65%;
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 14px;
                 color: gray;
@@ -220,7 +220,7 @@ html, body {
                 position: absolute;
                 width: 1.3em;
                 height: 1.3em;
-                overflow: visible;
+                overflow: invisible;
                 display: flex;
                 justify-content: center;
                 align-items: center;
