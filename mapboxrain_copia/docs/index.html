@@ -54,9 +54,6 @@
                 </div>
 
             </div>
-
-       
-    
         
         <div id="map-styles-bg">
             <div id="map-styles">
@@ -238,25 +235,7 @@
 });
 
 map.addControl(directions, 'top-right');
-map.scrollZoom.enable();
-
-        
-     
-        
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+map.scrollZoom.enable()
         
         map.addControl(new mapboxgl.NavigationControl());
         map.addControl(new mapboxgl.FullscreenControl({container: root}));
@@ -380,7 +359,7 @@ map.scrollZoom.enable();
         });
         rainLayer.on('refresh', ({timestamp}) => {
             const date = new Date(timestamp * 1000).toString().replace(/\(.+\)$/, '');
-            lastUpdated.innerHTML = `Last updated: ${date}`;
+            lastUpdated.innerHTML = `Actualizado: ${date}`;
         });
         legend.innerHTML = rainLayer.getLegendHTML();
 
