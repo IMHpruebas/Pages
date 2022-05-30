@@ -227,10 +227,10 @@
         const directions = new MapboxDirections({
   accessToken: mapboxgl.accessToken,
   unit: 'metric',
-  profile: 'mapbox/driving',
-  alternatives: false,
+  profile: 'mapbox/walking',
+  alternatives: true,
   geometries: 'geojson',
-  controls: { instructions: false },
+  controls: { instructions: true },
   flyTo: false
 });
 
@@ -238,15 +238,7 @@ map.addControl(directions, 'top-right');
 map.scrollZoom.enable();
 
         
- map.addControl(
-new MapboxDirections({
-accessToken: mapboxgl.accessToken
-}),
-'top-right'
-);
- 
-        
-        
+     
         
         
         
