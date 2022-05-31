@@ -86,8 +86,8 @@
         <div id="rain-bg">
             <div id="rain">
                 <div id="color-select">
-                    <div id="rain-color-button" class="active">Rain Color</div>
-                    <div id="snow-color-button">Snow Color</div>
+                    <div id="rain-color-button" class="active">Color Lluvia</div>
+                    <div id="snow-color-button">Color Nieve</div>
                 </div>
                 <div id="rain-color-picker" class="active">
                     <div id="rain-color-picker-inner" ></div>
@@ -299,7 +299,7 @@ map.scrollZoom.enable()
                 map.once('styledata', () => {
                     map.setStyle(style === 'terrain' ? 'rain-layer.json' : `mapbox://styles/mapbox/${style}`);
                     map.once('styledata', () => {
-                       map.addLayer(rainLayer, style === 'terrain' ? 'water-boundary-bg' : style !== 'satellite-v9' ? 'road-label' : null);
+                       map.addLayer(rainLayer, style === 'terrain' ? 'water-boundary-bg' : style !== 'streets-v11' ? 'road-label' : null);
                     });
                 });
                 mapStyle = style;
