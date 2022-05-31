@@ -105,7 +105,7 @@
         <div id="info-bg">
             <div id="info">
                 <h3>Planificador Rutas Ermua</h3>
-                <p>Esta visualización ha sido desarrollada por<a href="https://nagix.github.io" target="_blank">Ivan Arakistain</a>. Los datos abiertos provienen de<a href="https://www.rainviewer.com" target="_blank">RainViewer</a>, which also gathers data from <a href="https://www.rainviewer.com/sources.html" target="_blank">different data sources</a>.</p>
+                <p>Esta visualización ha sido desarrollada por<a href="https://imhpruebas.github.io/Pages/mapboxrain_copia/" target="_blank">Ivan Arakistain</a>. Los datos abiertos provienen de<a href="https://www.rainviewer.com" target="_blank">RainViewer</a>, which also gathers data from <a href="https://www.rainviewer.com/sources.html" target="_blank">different data sources</a>.</p>
                 <p>El código fuente está disponible en  <a href="https://github.com/IMHpruebas/Pages/tree/main/mapboxrain_copia" target="_blank">GitHub repository</a>.</p>
             </div>
         </div>
@@ -118,9 +118,6 @@ img {
   width: 70%;
 }
 </style>
-    
-    
-    
     
     <script>
         class MapboxGLButtonControl {
@@ -277,13 +274,13 @@ map.scrollZoom.enable()
             }
         }, {
             className: 'mapboxgl-ctrl-rain',
-            title: 'Rain Color and Mesh Opacity',
+            title: 'Opacidad color lluvia',
             eventHandler() {
                 rainBg.style.display = 'block';
             }
         }, {
             className: 'mapboxgl-ctrl-info',
-            title: 'About Mapbox GL JS Rain Layer',
+            title: 'Sobre Mapbox GL JS lluvia',
             eventHandler() {
                 infoBg.style.display = 'block';
             }
