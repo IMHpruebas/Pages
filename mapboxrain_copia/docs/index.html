@@ -253,6 +253,7 @@ img {
             });
 
       
+  map.addControl(directions, 'top-left');
         const directions = new MapboxDirections({
   accessToken: mapboxgl.accessToken,
   unit: 'metric',
@@ -264,8 +265,8 @@ img {
   language: 'es'
 });
 
-map.addControl(directions, 'top-right');
-map.scrollZoom.enable()
+
+map.scrollZoom.enable();
         
         map.addControl(new mapboxgl.NavigationControl());
         map.addControl(new mapboxgl.FullscreenControl({container: root}));
