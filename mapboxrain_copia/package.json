@@ -35,12 +35,12 @@
     "type": "git",
     "url": "git+https://github.com/nagix/mapbox-gl-rain-layer.git"
   },
-  "author": "Akihiko Kusanagi",
+  "author": "Ivan Arakistain",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nagix/mapbox-gl-rain-layer/issues"
+    "url": "https://github.com/IMHpruebas/Pages/issues"
   },
-  "homepage": "https://nagix.github.io/mapbox-gl-rain-layer",
+  "homepage": "https://github.com/IMHpruebas/Pages/blob/main/mapboxrain_copia/docs/",
   "jsdelivr": "dist/mapbox-gl-rain-layer.min.js",
   "unpkg": "dist/mapbox-gl-rain-layer.min.js"
 }
