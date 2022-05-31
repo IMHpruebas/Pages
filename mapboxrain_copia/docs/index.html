@@ -252,7 +252,7 @@ img {
                 toggleSidebar('left');
             });
 
-     onAdd(directions) {   
+     map.addControl(directions, 'top-right') {   
         const directions = new MapboxDirections({
   accessToken: mapboxgl.accessToken,
   unit: 'metric',
