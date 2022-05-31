@@ -297,7 +297,7 @@ map.scrollZoom.enable()
                 mapStyleBg.style.display = 'none';
                 map.removeLayer('rain');
                 map.once('styledata', () => {
-                    map.setStyle(style === 'terrain' ? 'rain-layer.json' : `mapbox://styles/mapbox/${style}`);
+                    map.setStyle(style === 'streets-v11' ? 'rain-layer.json' : `mapbox://styles/mapbox/${style}`);
                     map.once('styledata', () => {
                        map.addLayer(rainLayer, style === 'terrain' ? 'water-boundary-bg' : style !== 'streets-v11' ? 'road-label' : null);
                     });
