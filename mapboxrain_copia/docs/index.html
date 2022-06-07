@@ -29,26 +29,23 @@
     <script src="https://cdn.jsdelivr.net/npm/suncalc@1.8.0/suncalc.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 <!-- Import Turf and Polyline -->
-<script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js></script>
+    <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js></script>
 <!-- Import Mapbox GL Directions -->
 
     <script src=https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js></script>
-<link rel="stylesheet" href=https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css type="text/css" /> 
+    link rel="stylesheet" href=https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css type="text/css" /> 
 
 
 <!--  
-<link rel="stylesheet" type="text/css" href="mapbox-gl-directions-master/src/mapbox-gl-directions.css">
-<link rel="stylesheet" type="text/css" href="mapa_directions.css"> 
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
-<script type="text/javascript" src="mapbox-gl-directions-master/dist/mapbox-gl-directions.js"></script>
-<script type="text/javascript" src='mapa_directions.js'></script>   -->
-    
-    
-    
+   <link rel="stylesheet" type="text/css" href="mapbox-gl-directions-master/src/mapbox-gl-directions.css">
+   <link rel="stylesheet" type="text/css" href="mapa_directions.css"> 
+   script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+   <script type="text/javascript" src="mapbox-gl-directions-master/dist/mapbox-gl-directions.js"></script>
+   <script type="text/javascript" src='mapa_directions.js'></script>   -->
     
     
 </head>
@@ -65,8 +62,7 @@
                     <img src="aire.jpg" alt="Italian Trulli">
                     . <div class="sidebar-toggle rounded-rect left" onclick="toggleSidebar('left')" >&rarr;
                    
-        </div>
-                    
+        </div>     
                     </div>
                 </div>
 
@@ -86,8 +82,8 @@
         <div id="rain-bg">
             <div id="rain">
                 <div id="color-select">
-                    <div id="rain-color-button" class="active">Rain Color</div>
-                    <div id="snow-color-button">Snow Color</div>
+                    <div id="rain-color-button" class="active">Color Lluvia</div>
+                    <div id="snow-color-button">Color Nieve</div>
                 </div>
                 <div id="rain-color-picker" class="active">
                     <div id="rain-color-picker-inner" ></div>
@@ -104,9 +100,9 @@
         </div>
         <div id="info-bg">
             <div id="info">
-                <h3>About Mapbox GL JS Rain Layer</h3>
-                <p>This data visualization was produced by <a href="https://nagix.github.io" target="_blank">Akihiko Kusanagi</a>. The data for this visualization are sourced from <a href="https://www.rainviewer.com" target="_blank">RainViewer</a>, which also gathers data from <a href="https://www.rainviewer.com/sources.html" target="_blank">different data sources</a>.</p>
-                <p>Source code is available at  <a href="https://github.com/nagix/mapbox-gl-rain-layer" target="_blank">GitHub repository</a>.</p>
+                <h3>Sobre Mapbox GL JS Lluvia</h3>
+                <p>Esta visualización ha sido desarrollada por <a href="https://nagix.github.io" target="_blank">Ivan Arakistain</a>. The data for this visualization are sourced from <a href="https://www.rainviewer.com" target="_blank">RainViewer</a>, which also gathers data from <a href="https://www.rainviewer.com/sources.html" target="_blank">different data sources</a>.</p>
+                <p>El código fuente está disponible en el <a href="https://github.com/nagix/mapbox-gl-rain-layer" target="_blank">repositorio de Github</a>.</p>
             </div>
         </div>
         <div id="legend"></div>
@@ -114,13 +110,10 @@
     
     
     <style>
-img {
-  width: 70%;
-}
-</style>
-    
-    
-    
+    img {
+            width: 70%;
+        }
+    </style>
     
     <script>
         class MapboxGLButtonControl {
@@ -243,8 +236,8 @@ img {
 
                 }
   
-                // Update the class list on the element
-                elem.className = classes.join(' ');
+                    // Update the class list on the element
+                    elem.className = classes.join(' ');
 
             }
   
@@ -255,19 +248,18 @@ img {
       
  
         const directions = new MapboxDirections({
-  accessToken: mapboxgl.accessToken,
-  unit: 'metric',
-  profile: 'mapbox/walking',
-  alternatives: true,
-  geometries: 'geojson',
-  controls: { instructions: true },
-  flyTo: false,
-  language: 'es'
+        accessToken: mapboxgl.accessToken,
+        unit: 'metric',
+        profile: 'mapbox/walking',
+        alternatives: true,
+        geometries: 'geojson',
+        controls: { instructions: true },
+        flyTo: false,
+        language: 'es'
 });
 
- map.addControl(directions, 'top-right');
-map.scrollZoom.enable()
-        
+        map.addControl(directions, 'top-right');
+        map.scrollZoom.enable()
         map.addControl(new mapboxgl.NavigationControl());
         map.addControl(new mapboxgl.FullscreenControl({container: root}));
         map.addControl(new MapboxGLButtonControl([{
@@ -278,13 +270,13 @@ map.scrollZoom.enable()
             }
         }, {
             className: 'mapboxgl-ctrl-rain',
-            title: 'Rain Color and Mesh Opacity',
+            title: 'Color y opacidad de lluvia',
             eventHandler() {
                 rainBg.style.display = 'block';
             }
         }, {
             className: 'mapboxgl-ctrl-info',
-            title: 'About Mapbox GL JS Rain Layer',
+            title: 'Sobre Mapbox GL JS Lluvia',
             eventHandler() {
                 infoBg.style.display = 'block';
             }
