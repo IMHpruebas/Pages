@@ -251,3 +251,13 @@ html, body {
             .right.collapsed {
                 transform: translateX(295px);
             }
+
+            .visible { 
+             visibility : visible; /* By default its visible.*/ 
+                } 
+ 
+            .hidden { 
+             visibility : hidden; 
+             outline : none; /*Used to avoid keyboard events*/ 
+             pointer-events : none; /*used to avoid mouse events*/ 
+                } 
