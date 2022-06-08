@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja_JP">
+<html lang="es_ES">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39988758-2"></script>
     <script>
@@ -28,14 +28,14 @@
     <script src="https://cdn.jsdelivr.net/npm/mapbox-gl-rain-layer@0.5.0/dist/mapbox-gl-rain-layer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/suncalc@1.8.0/suncalc.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-<!-- Import Turf and Polyline -->
-<script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js></script>
-<!-- Import Mapbox GL Directions -->
+    
+    <!-- Import Turf and Polyline -->
+    <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js></script>
 
+    <!-- Import Mapbox GL Directions -->
     <script src=https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js></script>
-<link rel="stylesheet" href=https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css type="text/css" /> 
-
+    <link rel="stylesheet" href=https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css type="text/css" /> 
 
 <!--  
 <link rel="stylesheet" type="text/css" href="mapbox-gl-directions-master/src/mapbox-gl-directions.css">
@@ -46,11 +46,7 @@
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 <script type="text/javascript" src="mapbox-gl-directions-master/dist/mapbox-gl-directions.js"></script>
 <script type="text/javascript" src='mapa_directions.js'></script>   -->
-    
-    
-    
-    
-    
+       
 </head>
 <body>
     <div id="root">
@@ -116,13 +112,10 @@
     
     
     <style>
-img {
-  width: 70%;
-}
-</style>
-    
-    
-    
+    img {
+            width: 70%;
+        }
+    </style>
     
     <script>
         class MapboxGLButtonControl {
@@ -257,19 +250,18 @@ img {
       
  
         const directions = new MapboxDirections({
-  accessToken: mapboxgl.accessToken,
-  unit: 'metric',
-  profile: 'mapbox/walking',
-  alternatives: true,
-  geometries: 'geojson',
-  controls: { instructions: true },
-  flyTo: false,
-  language: 'es'
+        accessToken: mapboxgl.accessToken,
+        unit: 'metric',
+        profile: 'mapbox/walking',
+        alternatives: true,
+        geometries: 'geojson',
+        controls: { instructions: true },
+        flyTo: false,
+        language: 'es'
 });
 
- map.addControl(directions, 'top-right');
-map.scrollZoom.enable()
-        
+        map.addControl(directions, 'top-right');
+        map.scrollZoom.enable();
         map.addControl(new mapboxgl.NavigationControl());
         map.addControl(new mapboxgl.FullscreenControl({container: root}));
         map.addControl(new MapboxGLButtonControl([{
