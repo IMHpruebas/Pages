@@ -31,6 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mapbox-gl-rain-layer@0.5.0/dist/mapbox-gl-rain-layer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/suncalc@1.8.0/suncalc.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
     
     <!-- Import Turf and Polyline -->
@@ -123,100 +124,6 @@
     
     <script>
         
-        
-        
-        
-        
-             
-        
-        
-        $(document).ready(function () {
-      $.ajax({
-        type: "GET",
-        url: 'https://docs.google.com/spreadsheets/u/0/d/1y2hdtxk8f14T5g5DfNoYYTEIGxf49zEX-bvbDKqbSoo/export?format=csv&id=1y2hdtxk8f14T5g5DfNoYYTEIGxf49zEX-bvbDKqbSoo&gid=0',
-        dataType: "text",
-        success: function (csvData) { makeGeoJSON(csvData); }
-      });
-    });
-
-    function makeGeoJSON(csvData) {
-      console.log(csvData)
-      csv2geojson.csv2geojson(csvData, {
-        latfield: 'Latitude',
-        lonfield: 'Longitude',
-        delimiter: ','
-      }, function (err, data) {
-        console.log(data)
-        map.on('load', function () {
-
-          map.addSource("locations", {
-            type: "geojson",
-            data: data,
-            cluster: true,
-            clusterMaxZoom: 14,
-            clusterRadius: 20
-          });
-
-          map.addLayer({
-            id: "clusters",
-            type: "symbol",
-            source: "locations",
-            filter: ["has", "point_count"],
-            layout: {
-              "icon-image": "za-provincial-2",
-              "text-field": "{point_count_abbreviated}",
-              "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-              "text-size": 12,
-            },
-            paint: {
-              "text-color": "#000"
-            }
-          });
-
-          map.addLayer({
-            id: 'unclustered-count',
-            type: 'symbol',
-            source: 'locations',
-            filter: ['!has', 'point_count'],
-            layout: {
-              "icon-image": "za-provincial-2",
-            }
-          });
-        });
-      });
-    }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         class MapboxGLButtonControl {
             constructor(optionArray) {
                 this._options = optionArray.map(options => ({
@@ -298,6 +205,91 @@
             hash: true,
             language: 'es'
         });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        url: 'https://docs.google.com/spreadsheets/u/0/d/1y2hdtxk8f14T5g5DfNoYYTEIGxf49zEX-bvbDKqbSoo/export?format=csv&id=1y2hdtxk8f14T5g5DfNoYYTEIGxf49zEX-bvbDKqbSoo&gid=0',
+        dataType: "text",
+        success: function (csvData) { makeGeoJSON(csvData); }
+      });
+    });
+
+    function makeGeoJSON(csvData) {
+      console.log(csvData)
+      csv2geojson.csv2geojson(csvData, {
+        latfield: 'Latitude',
+        lonfield: 'Longitude',
+        delimiter: ','
+      }, function (err, data) {
+        console.log(data)
+        map.on('load', function () {
+
+          map.addSource("locations", {
+            type: "geojson",
+            data: data,
+            cluster: true,
+            clusterMaxZoom: 14,
+            clusterRadius: 20
+          });
+
+          map.addLayer({
+            id: "clusters",
+            type: "symbol",
+            source: "locations",
+            filter: ["has", "point_count"],
+            layout: {
+              "icon-image": "za-provincial-2",
+              "text-field": "{point_count_abbreviated}",
+              "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+              "text-size": 12,
+            },
+            paint: {
+              "text-color": "#000"
+            }
+          });
+
+          map.addLayer({
+            id: 'unclustered-count',
+            type: 'symbol',
+            source: 'locations',
+            filter: ['!has', 'point_count'],
+            layout: {
+              "icon-image": "za-provincial-2",
+            }
+          });
+        });
+      });
+    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
     function toggleSidebar(id) 
