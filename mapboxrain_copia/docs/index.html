@@ -273,7 +273,14 @@
         
         
         
-        
+    map.on('load', function(){
+  var scale = new mapboxgl.ScaleControl({
+    maxWidth: 80,
+    unit: 'metric'
+  });
+
+  map.addControl(scale);
+});    
         
         
         
