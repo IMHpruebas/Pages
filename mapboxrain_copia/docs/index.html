@@ -253,11 +253,9 @@ map.on('click', 'building', function (e) {
         
         
         
-        
-      var geojsonFeatures = {
+    
+    var geojsonFeatures = {
       type: 'FeatureCollection',
-
-
       features: [{
         type: 'Feature',
         "geometry": { "type": "Point", "coordinates": [-77.03, 38.90] },
@@ -276,7 +274,7 @@ map.on('click', 'building', function (e) {
         }
       }, {
         type: 'Feature',
-        "geometry": { "type": "Point", "coordinates": [-2.50261, 43.1866] },
+        "geometry": { "type": "Point", "coordinates": [-74.00, 40.71] },
         "properties": {
           'title': 'New York City',
           'marker-color': '#3c4e5a',
@@ -297,7 +295,7 @@ map.on('click', 'building', function (e) {
 
         var el = document.createElement('div');
         el.className = 'marker';
-        el.style.backgroundImage = 'url(ttps://i7.uihere.com/icons/286/985/195/map-marker-icon-4c26f54a8bbe5a8b5338d413489deb9d.png)';
+        el.style.backgroundImage = 'url(https://i7.uihere.com/icons/286/985/195/map-marker-icon-4c26f54a8bbe5a8b5338d413489deb9d.png)';
         el.style.width = 110 + 'px';
         el.style.height = 130 + 'px';
 
@@ -353,12 +351,7 @@ map.on('click', 'building', function (e) {
       $slideshow.find('.active').removeClass('active').hide();
       $newSlide.addClass('active').show();
       return false;
-    });  
-        
-        
-        
-        
-        
+    });
         
         
         
