@@ -345,7 +345,9 @@
                 toggleSidebar('left');
             });
 
-      
+    
+        
+        map.on('load', function(){    
  
         const directions = new MapboxDirections({
         accessToken: mapboxgl.accessToken,
@@ -515,7 +517,7 @@
         repeat();
        
         
-        
+       }); 
         
         
         
