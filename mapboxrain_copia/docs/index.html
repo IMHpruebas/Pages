@@ -213,7 +213,9 @@
         
       
         
-           
+    map.on('load', () => {
+    map.addControl(new MapboxTraffic());
+});       
         
         
         
