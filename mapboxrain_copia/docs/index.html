@@ -286,7 +286,6 @@
   });
 
   map.addControl(scale);
-  map.addControl(new MapboxTraffic());
 });    
         
         
@@ -367,6 +366,7 @@
         language: 'es'
 });
 
+        map.addControl(new MapboxTraffic());
         map.addControl(directions, 'top-left');
         map.scrollZoom.enable();
         map.addControl(new mapboxgl.NavigationControl());
